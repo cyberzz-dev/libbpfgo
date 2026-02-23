@@ -1,9 +1,9 @@
-module github.com/aquasecurity/libbpfgo/selftest/common
+module github.com/cyberzz-dev/libbpfgo/selftest/common
 
 go 1.21
 
-require github.com/aquasecurity/libbpfgo v0.0.0
+require github.com/cyberzz-dev/libbpfgo v0.0.0
 
-replace github.com/aquasecurity/libbpfgo => ../..
+replace github.com/cyberzz-dev/libbpfgo => ../..
 
-replace github.com/aquasecurity/libbpfgo/selftest/common => ../../selftest/common
+replace github.com/cyberzz-dev/libbpfgo/selftest/common => ../../selftest/common
