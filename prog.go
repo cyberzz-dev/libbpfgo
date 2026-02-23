@@ -305,6 +305,37 @@ func (p *BPFProg) DetachCgroupLegacy(cgroupV2DirPath string, attachType BPFAttac
 	return nil
 }
 
+// AttachTCX attaches the BPF program via the TCX helper. The
+// behaviour is analogous to AttachXDP but uses the
+// `bpf_program__attach_tcx` call introduced in newer kernels.  The
+// resulting BPFLink has its linkType set to TCX so consumers can
+// distinguish these links when iterating or printing debug information.
+func (p *BPFProg) AttachTCX(deviceName string) (*BPFLink, error) {
+	iface, err := net.InterfaceByName(deviceName)
+	if err != nil {
+		return nil, fmt.Errorf("failed to find device by name %s: %w", deviceName, err)
+	}
+
+	// only the size field is required; zero‐value covers the rest
+	// (relative_fd, relative_id, etc. default to 0).
+	opts := C.struct_bpf_tcx_opts{sz: C.sizeof_struct_bpf_tcx_opts}
+
+	linkC, errno := C.bpf_program__attach_tcx(p.prog, C.int(iface.Index), &opts)
+	if linkC == nil {
+		return nil, fmt.Errorf("failed to attach tcx on device %s to program %s: %w", deviceName, p.Name(), errno)
+	}
+
+	bpfLink := &BPFLink{
+		link:      linkC,
+		prog:      p,
+		linkType:  TCX,
+		eventName: fmt.Sprintf("tcx-%s-%s", p.Name(), deviceName),
+	}
+	p.module.links = append(p.module.links, bpfLink)
+
+	return bpfLink, nil
+}
+
 func (p *BPFProg) AttachXDP(deviceName string) (*BPFLink, error) {
 	iface, err := net.InterfaceByName(deviceName)
 	if err != nil {
