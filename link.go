@@ -29,6 +29,7 @@ const (
 	Uretprobe
 	Tracing
 	XDP
+	TCX // traffic control eXpress (new attachment type)
 	Cgroup
 	CgroupLegacy
 	Netns
