@@ -3,7 +3,7 @@ module github.com/aquasecurity/libbpfgo/selftest/tracing
 go 1.21
 
 require (
-	github.com/aquasecurity/libbpfgo v0.9.2-libbpf-1.5.1.0.20250826130354-1b9ce23ef29b
+	github.com/aquasecurity/libbpfgo v0.9.2-libbpf-1.6.3
 	github.com/aquasecurity/libbpfgo/selftest/common v0.0.0-00010101000000-000000000000
 )
 
