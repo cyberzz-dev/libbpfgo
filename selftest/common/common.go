@@ -15,7 +15,7 @@ import (
 	"strings"
 	"unsafe"
 
-	bpf "github.com/aquasecurity/libbpfgo"
+	bpf "github.com/cyberzz-dev/libbpfgo"
 )
 
 // ResizeMap resizes a BPF map to the specified size.

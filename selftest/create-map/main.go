@@ -5,8 +5,8 @@ import "C"
 import (
 	"unsafe"
 
-	bpf "github.com/aquasecurity/libbpfgo"
-	"github.com/aquasecurity/libbpfgo/selftest/common"
+	bpf "github.com/cyberzz-dev/libbpfgo"
+	"github.com/cyberzz-dev/libbpfgo/selftest/common"
 )
 
 // CreateMap uses `bpf_map_create()`, a 'low-level' API in libbpf

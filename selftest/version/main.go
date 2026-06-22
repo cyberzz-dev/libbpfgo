@@ -6,8 +6,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/aquasecurity/libbpfgo"
-	"github.com/aquasecurity/libbpfgo/selftest/common"
+	"github.com/cyberzz-dev/libbpfgo"
+	"github.com/cyberzz-dev/libbpfgo/selftest/common"
 )
 
 func main() {

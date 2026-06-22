@@ -5,8 +5,8 @@ import "C"
 import (
 	"errors"
 
-	bpf "github.com/aquasecurity/libbpfgo"
-	"github.com/aquasecurity/libbpfgo/selftest/common"
+	bpf "github.com/cyberzz-dev/libbpfgo"
+	"github.com/cyberzz-dev/libbpfgo/selftest/common"
 )
 
 func main() {
