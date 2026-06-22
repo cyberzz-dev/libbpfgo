@@ -39,6 +39,49 @@ const (
 	USDT
 )
 
+// String returns a human readable representation of the link type. This
+// helper is useful for debug output and tests.
+func (t LinkType) String() string {
+	switch t {
+	case Tracepoint:
+		return "Tracepoint"
+	case RawTracepoint:
+		return "RawTracepoint"
+	case Kprobe:
+		return "Kprobe"
+	case Kretprobe:
+		return "Kretprobe"
+	case LSM:
+		return "LSM"
+	case PerfEvent:
+		return "PerfEvent"
+	case Uprobe:
+		return "Uprobe"
+	case Uretprobe:
+		return "Uretprobe"
+	case Tracing:
+		return "Tracing"
+	case XDP:
+		return "XDP"
+	case TCX:
+		return "TCX"
+	case Cgroup:
+		return "Cgroup"
+	case CgroupLegacy:
+		return "CgroupLegacy"
+	case Netns:
+		return "Netns"
+	case Iter:
+		return "Iter"
+	case StructOps:
+		return "StructOps"
+	case USDT:
+		return "USDT"
+	default:
+		return "Unknown"
+	}
+}
+
 //
 // BPFLink
 //
