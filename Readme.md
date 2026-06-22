@@ -2,9 +2,9 @@
 
 <img src="docs/images/aqua-tux.png" width="150" height="auto">
 
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aquasecurity/libbpfgo)](https://github.com/aquasecurity/libbpfgo/releases)
-[![Go Report Card](https://goreportcard.com/badge/github.com/aquasecurity/libbpfgo)](https://goreportcard.com/report/github.com/aquasecurity/libbpfgo)
-[![License](https://img.shields.io/github/license/aquasecurity/libbpfgo)](https://github.com/aquasecurity/libbpfgo/blob/main/LICENSE)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aquasecurity/libbpfgo)](https://github.com/cyberzz-dev/libbpfgo/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/cyberzz-dev/libbpfgo)](https://goreportcard.com/report/github.com/cyberzz-dev/libbpfgo)
+[![License](https://img.shields.io/github/license/aquasecurity/libbpfgo)](https://github.com/cyberzz-dev/libbpfgo/blob/main/LICENSE)
 
 ----
 
@@ -85,7 +85,7 @@ In a high level, this is a typical workflow for working with the library:
 
 ```go
 // initializing
-import bpf "github.com/aquasecurity/libbpfgo"
+import bpf "github.com/cyberzz-dev/libbpfgo"
 ...
 bpfModule := bpf.NewModuleFromFile(bpfObjectPath)
 bpfModule.BPFLoadObject()
@@ -133,4 +133,4 @@ Please check our github milestones for an idea of the project roadmap. The gener
 - [How to Build eBPF Programs with libbpfgo](https://blog.aquasec.com/libbpf-ebpf-programs).
 - [selftests](./selftest) are small program using libbpfgo and might be good usage examples.
 - [tracee-ebpf](https://github.com/aquasecurity/tracee/tree/main/cmd/tracee-ebpf) is a robust consumer of this project.
-- Feel free to ask questions by creating a new [Discussion](https://github.com/aquasecurity/libbpfgo/discussions), we'd love to help.
+- Feel free to ask questions by creating a new [Discussion](https://github.com/cyberzz-dev/libbpfgo/discussions), we'd love to help.
